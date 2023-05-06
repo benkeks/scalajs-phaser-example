@@ -9,6 +9,7 @@ import typings.phaser.mod as Phaser
 import typings.phaser.Phaser.Types.Tweens.TweenBuilderConfig
 import typings.phaser.Phaser.Types.Core.GameConfig
 import typings.phaser.Phaser.Types.Core.ScaleConfig
+import typings.phaser.global.Phaser.Display.Color
 
 class Cookie(scene: Phaser.Scene) extends
     Phaser.GameObjects.Sprite(scene: Phaser.Scene, 0, 0, "cookie"):
@@ -84,6 +85,8 @@ class CookieScene() extends Phaser.Scene:
           .set("scale", 1.5 + .2 * Math.random())
       )
     ) : js.Function)
+
+    cameras.main.backgroundColor = Color(10, 130, 200)
 
     for i <- 1 to 23 do
       val c = Cookie(this)
