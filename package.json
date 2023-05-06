@@ -1,6 +1,5 @@
 {
-  "name": "libration",
-  "private": true,
+  "name": "scalajs-phaser-example",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

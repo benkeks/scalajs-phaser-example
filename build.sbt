@@ -1,6 +1,6 @@
 import org.scalajs.linker.interface.ModuleSplitStyle
 
-lazy val libration = project.in(file("."))
+lazy val phaserExample = project.in(file("."))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
   .enablePlugins(ScalablyTypedConverterExternalNpmPlugin)
   .settings(
@@ -12,14 +12,14 @@ lazy val libration = project.in(file("."))
     /* Configure Scala.js to emit modules in the optimal way to
      * connect to Vite's incremental reload.
      * - emit ECMAScript modules
-     * - emit as many small modules as possible for classes in the "libration" package
+     * - emit as many small modules as possible for classes in the "phaserExample" package
      * - emit as few (large) modules as possible for all other classes
      *   (in particular, for the standard library)
      */
     scalaJSLinkerConfig ~= {
       _.withModuleKind(ModuleKind.ESModule)
         .withModuleSplitStyle(
-          ModuleSplitStyle.SmallModulesFor(List("libration")))
+          ModuleSplitStyle.SmallModulesFor(List("phaserExample")))
     },
 
     /* Depend on the scalajs-dom library.
