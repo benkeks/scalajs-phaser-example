@@ -65,7 +65,7 @@ class CookieScene() extends Phaser.Scene:
   var scoreText: Phaser.GameObjects.Text = null
 
   def preload() =
-    load.image("cookie", "/cookie.png")
+    load.image("cookie", "cookie.png")
 
   def create() =
     data.set("score", 0)
