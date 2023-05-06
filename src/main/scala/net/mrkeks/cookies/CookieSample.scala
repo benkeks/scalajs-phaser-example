@@ -1,4 +1,4 @@
-package libration
+package net.mrkeks.cookies
 
 import scala.collection.mutable.Queue
 
