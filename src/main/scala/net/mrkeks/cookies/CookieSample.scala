@@ -70,21 +70,25 @@ class CookieScene() extends Phaser.Scene:
   def create() =
     data.set("score", 0)
     scoreText = add.text(.5 * cameras.main.width, 30, "click the cookies!").asInstanceOf[Phaser.GameObjects.Text]
-    scoreText.setOrigin(.5, .5)
+      .setOrigin(.5, .5)
+      .setDepth(100)
+      .setScale(.5)
     scoreText.style
-      .setFontSize("4em")
+      .setFontSize("8em")
       .setFontStyle("bold")
     data.events.on("changedata-score", ((_: Any, value: Any, _: Any) =>
       scoreText
         .setText(value.toString())
-        .setScale(1.0)
+        .setScale(.5)
+      tweens.getTweensOf(scoreText).foreach(_.destroy())
       tweens.add(
         TweenBuilderConfig(scoreText)
           .setDuration(100)
           .setYoyo(true)
-          .set("scale", 1.5 + .2 * Math.random())
+          .set("scale", 1.3 + .2 * Math.random())
       )
     ) : js.Function)
+    scale.on("resize", () => scoreText.x = .5 * cameras.main.width)
 
     cameras.main.backgroundColor = Color(10, 130, 200)
 
