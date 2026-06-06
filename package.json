@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@scala-js/vite-plugin-scalajs": "^1.0.0",
+    "@scala-js/vite-plugin-scalajs": "^1.1.0",
     "typescript": "^5.0.3",
-    "vite": "^4.3.9"
+    "vite": "^8.0.16"
   },
   "dependencies": {
     "phaser": "3.60"
